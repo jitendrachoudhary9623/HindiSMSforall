@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/detail_gradient"
+    tools:context=".Activity.DetailActivity">
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <android.support.v7.widget.CardView
+        android:id="@+id/cv_sms"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginBottom="30dp"
+        android:background="@android:color/white"
+        app:cardCornerRadius="30dp">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/sms_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="50dp"
+            android:layout_gravity="center|center_horizontal"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:text="रात सुबह का इंतज़ार नहीं करती,
+खुशबु मौसम का इंतज़ार नहीं करती,
+जो भी ख़ुशी मिले उसका आनंद लिया करो,
+क्योंकि जिंदगी वक़्त का इंतज़ार नहीं करती..
+🌺🌟🌟🌟🌺🌟🌟🌟🌺" />
+
+
+</RelativeLayout>
+    </android.support.v7.widget.CardView>
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/cv_share"
+        android:layout_below="@id/cv_sms"
+        app:cardCornerRadius="30dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginBottom="30dp">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="30dp">
+            <Button
+                android:layout_margin="7dp"
+                android:id="@+id/whatsapp"
+                android:background="@mipmap/whatsapp"
+                android:layout_width="@dimen/share_image"
+                android:layout_height="@dimen/share_image" />
+            <Button
+                android:id="@+id/facebook"
+
+                android:layout_margin="7dp"
+                android:background="@mipmap/facebook"
+                android:layout_width="@dimen/share_image"
+                android:layout_height="@dimen/share_image" />
+
+            <Button
+                android:layout_margin="7dp"
+                android:id="@+id/hike"
+
+                android:background="@mipmap/hike"
+                android:layout_width="@dimen/share_image"
+                android:layout_height="@dimen/share_image" />
+            <Button
+                android:layout_margin="7dp"
+                android:id="@+id/share"
+
+                android:background="@mipmap/share"
+                android:layout_width="@dimen/share_image"
+                android:layout_height="@dimen/share_image" />
+        </LinearLayout>
+        </ScrollView>
+    </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/cv_share"
+            app:cardCornerRadius="20dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginBottom="30dp">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:id="@+id/prev"
+                    android:text="Previous"
+                    android:textStyle="bold"
+                    android:textSize="17sp"
+                    android:textAlignment="center"
+                    android:padding="10dp"
+                    android:textColor="@color/colorPrimary"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="Next"
+                    android:id="@+id/next"
+                    android:textStyle="bold"
+                    android:textSize="17sp"
+                    android:textAlignment="center"
+                    android:padding="10dp"
+                    android:textColor="@color/colorPrimary"/>
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+    </RelativeLayout>
+</ScrollView>
+</RelativeLayout>

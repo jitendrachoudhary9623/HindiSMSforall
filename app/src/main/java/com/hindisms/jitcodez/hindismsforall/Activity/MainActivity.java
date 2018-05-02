@@ -74,13 +74,13 @@ public class MainActivity extends AppCompatActivity {
         adapter.addFrag(new TabFragment("Funny",h.getFunnySMS(this)), "Funny");
         adapter.addFrag(new TabFragment("Inspiring",h.getInspiringSMS(this)), "Inspiring");
         adapter.addFrag(new TabFragment("Birthday",h.getBirthdaySMS(this)), "Birthday");
-        adapter.addFrag(new TabFragment("Goodluck SMS",h.getGoodluckSMS(this)), "Goodluck SMS");
+ //       adapter.addFrag(new TabFragment("Goodluck SMS",h.getGoodluckSMS(this)), "Goodluck SMS");
         adapter.addFrag(new TabFragment("Good Morning SMS",h.getGoodMorningSMS(this)), "Good Morning SMS");
         adapter.addFrag(new TabFragment("Good Night SMS",h.getGoodNightSMS(this)), "Good Night SMS");
         adapter.addFrag(new TabFragment("Missing You SMS",h.getMissingYouSMS(this)), "Missing You SMS");
-        adapter.addFrag(new TabFragment("Love SMS",h.getLoveSMS(this)), "Love SMS");
+     //   adapter.addFrag(new TabFragment("Love SMS",h.getLoveSMS(this)), "Love SMS");
         adapter.addFrag(new TabFragment("Romantic SMS",h.getRomanticSMS(this)), "Romantic SMS");
-        adapter.addFrag(new TabFragment("Valentine",h.getValentineSMS(this)), "Valentine");
+      //  adapter.addFrag(new TabFragment("Valentine",h.getValentineSMS(this)), "Valentine");
 
 
 
