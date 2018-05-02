@@ -27,8 +27,12 @@ public class DetailActivity extends AppCompatActivity {
     InterstitialAd mInterstitialAd;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_detail);
+        final String playStoreLink="\n\nGet More at \n\n https://play.google.com/store/apps/details?id="+(getResources().getString(R.string.playstore));
+
         mInterstitialAd = new InterstitialAd(this);
         mInterstitialAd.setAdUnitId(getString(R.string.ad_interstitial));
         smsText=(TextView)findViewById(R.id.sms_text);
@@ -83,7 +87,7 @@ public class DetailActivity extends AppCompatActivity {
                 Intent whatsappIntent = new Intent(Intent.ACTION_SEND);
                 whatsappIntent.setType("text/plain");
                 whatsappIntent.setPackage("com.whatsapp");
-                whatsappIntent.putExtra(Intent.EXTRA_TEXT, sms.get(position));
+                whatsappIntent.putExtra(Intent.EXTRA_TEXT, sms.get(position)+playStoreLink);
                 try {
                     startActivity(whatsappIntent);
                 } catch (android.content.ActivityNotFoundException ex) {
@@ -97,7 +101,7 @@ public class DetailActivity extends AppCompatActivity {
                 Intent fbIntent = new Intent(Intent.ACTION_SEND);
                 fbIntent.setType("text/plain");
                 fbIntent.setPackage("com.facebook.katana");
-                fbIntent.putExtra(Intent.EXTRA_TEXT, sms.get(position));
+                fbIntent.putExtra(Intent.EXTRA_TEXT, sms.get(position)+playStoreLink);
                 try {
                     startActivity(fbIntent);
                 } catch (android.content.ActivityNotFoundException ex) {
@@ -111,7 +115,7 @@ public class DetailActivity extends AppCompatActivity {
                 Intent hikeIntent = new Intent(Intent.ACTION_SEND);
                 hikeIntent.setType("text/plain");
                 hikeIntent.setPackage("com.bsb.hike");
-                hikeIntent.putExtra(Intent.EXTRA_TEXT, sms.get(position));
+                hikeIntent.putExtra(Intent.EXTRA_TEXT, sms.get(position)+playStoreLink);
                 try {
                     startActivity(hikeIntent);
                 } catch (android.content.ActivityNotFoundException ex) {
@@ -124,7 +128,7 @@ public class DetailActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent sendIntent = new Intent();
                 sendIntent.setAction(Intent.ACTION_SEND);
-                sendIntent.putExtra(Intent.EXTRA_TEXT, sms.get(position));
+                sendIntent.putExtra(Intent.EXTRA_TEXT, sms.get(position)+playStoreLink);
                 sendIntent.setType("text/plain");
                 startActivity(sendIntent);
             }

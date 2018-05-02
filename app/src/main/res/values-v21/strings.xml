@@ -3,5 +3,6 @@
     <string name="ad_banner">ca-app-pub-3940256099942544/6300978111</string>
 
     <string name="ad_interstitial">ca-app-pub-3940256099942544/1033173712</string>
+    <string name="playstore">com.hindisms.jitcodez.hindismsforall</string>
 
 </resources>
