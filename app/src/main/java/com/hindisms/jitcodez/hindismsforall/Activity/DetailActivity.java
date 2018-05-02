@@ -8,6 +8,8 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 import com.hindisms.jitcodez.hindismsforall.R;
 
 import java.util.ArrayList;
@@ -18,6 +20,7 @@ public class DetailActivity extends AppCompatActivity {
     int position;
     TextView smsText,next,previous;
     Button whatsapp,facebook,hike,share;
+    AdView sms_share,share_next;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,9 +35,15 @@ public class DetailActivity extends AppCompatActivity {
         hike=(Button)findViewById(R.id.hike);
         share=(Button)findViewById(R.id.share);
 
+        sms_share=(AdView)findViewById(R.id.sms_share_ad);
+        share_next=(AdView)findViewById(R.id.share_next_ad);
+
         sms=getIntent().getStringArrayListExtra("SMS");
         position=getIntent().getIntExtra("Position",0);
         updateUI();
+        AdRequest adRequest=new AdRequest.Builder().build();
+        sms_share.loadAd(adRequest);
+        share_next.loadAd(adRequest);
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

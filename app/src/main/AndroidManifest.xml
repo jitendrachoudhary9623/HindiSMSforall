@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.hindisms.jitcodez.hindismsforall">
-
+<uses-permission android:name="android.permission.INTERNET"></uses-permission>
+   <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"></uses-permission>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -17,6 +18,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".Activity.DetailActivity"></activity>
+        <activity android:name="com.google.android.gms.ads.AdActivity"></activity>
     </application>
 
 </manifest>
