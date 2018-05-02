@@ -11,6 +11,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 import com.hindisms.jitcodez.hindismsforall.Adapter.SMSRecyclerView;
 import com.hindisms.jitcodez.hindismsforall.R;
 
@@ -25,6 +27,7 @@ public class TabFragment extends Fragment {
     private String title;//String for tab title
     ArrayList<String> sms;
     private static RecyclerView recyclerView;
+    AdView rc_ad;
 
     public TabFragment() {
     }
@@ -39,6 +42,9 @@ public class TabFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_layout, container, false);
+        rc_ad=(AdView)view.findViewById(R.id.rc_ad);
+        AdRequest adRequest=new AdRequest.Builder().build();
+        rc_ad.loadAd(adRequest);
         setRecyclerView();
         return view;
 

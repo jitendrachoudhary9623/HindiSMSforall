@@ -17,6 +17,8 @@ import com.hindisms.jitcodez.hindismsforall.Utils.Helper;
 import java.util.ArrayList;
 import java.util.List;
 
+import hotchemi.android.rate.AppRate;
+
 public class MainActivity extends AppCompatActivity {
     private static Toolbar toolbar;
     private static ViewPager viewPager;
@@ -64,6 +66,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
 
 
     //Setting View Pager
@@ -118,5 +121,24 @@ public class MainActivity extends AppCompatActivity {
         public CharSequence getPageTitle(int position) {
             return mFragmentTitleList.get(position);
         }
+    }
+    boolean flag=true;
+    @Override
+    public void onBackPressed() {
+        if(flag==true) {
+            AppRate.with(this).showRateDialog(this);
+            flag=false;
+        }else
+        {
+            finish();
+            System.exit(0);
+        }
+
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+
     }
 }

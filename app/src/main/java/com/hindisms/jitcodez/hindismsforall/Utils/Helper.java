@@ -50,6 +50,7 @@ public class Helper {
         {
             sms.add(content[i]);
         }
+        sms.remove(sms.size()-1);
     }
 
     public ArrayList<String> getFriendSMS(Context context)

@@ -8,8 +8,10 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.InterstitialAd;
 import com.hindisms.jitcodez.hindismsforall.R;
 
 import java.util.ArrayList;
@@ -21,11 +23,14 @@ public class DetailActivity extends AppCompatActivity {
     TextView smsText,next,previous;
     Button whatsapp,facebook,hike,share;
     AdView sms_share,share_next;
+    AdRequest adRequest1;
+    InterstitialAd mInterstitialAd;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
-
+        mInterstitialAd = new InterstitialAd(this);
+        mInterstitialAd.setAdUnitId(getString(R.string.ad_interstitial));
         smsText=(TextView)findViewById(R.id.sms_text);
         next=(TextView)findViewById(R.id.next);
         previous=(TextView)findViewById(R.id.prev);
@@ -41,6 +46,8 @@ public class DetailActivity extends AppCompatActivity {
         sms=getIntent().getStringArrayListExtra("SMS");
         position=getIntent().getIntExtra("Position",0);
         updateUI();
+
+
         AdRequest adRequest=new AdRequest.Builder().build();
         sms_share.loadAd(adRequest);
         share_next.loadAd(adRequest);
@@ -122,12 +129,32 @@ public class DetailActivity extends AppCompatActivity {
                 startActivity(sendIntent);
             }
         });
+        adRequest1 = new AdRequest.Builder()
+                .build();
 
+        // Load ads into Interstitial Ads
+
+        mInterstitialAd.setAdListener(new AdListener() {
+            public void onAdLoaded() {
+                showInterstitial();
+            }
+        });
     }
-
+    private void showInterstitial() {
+        if (mInterstitialAd.isLoaded()) {
+            mInterstitialAd.show();
+        }
+    }
     private void updateUI() {
 
         smsText.setText(sms.get(position));
+
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        mInterstitialAd.loadAd(adRequest1);
 
     }
 }
